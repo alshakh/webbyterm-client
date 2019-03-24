@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./xterm/xterm.css">
+    <style>
+        .terminal {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Refresh + Unrestricted + env{qq=qqqqqqq} + name</h1>
+    <div class="terminal" data-name="first term" data-env='{"qq":"qqqqqqqq"}' data-id=efeasdf data-unrestricted-shell data-terminal data-cwd="/var/tmp/" data-refresh></div>
+    <h1> No Refresh + restricted + env{} + noname</h1>
+    <div class="terminal" data-id=efesdf data-terminal data-cwd="/var/tmp/"></div>
+
+    <script src="./xterm/xterm.js"></script>
+    <script src="./xterm/addons/fit/fit.js"></script>
+    <script src="./xterm/addons/attach/attach.js"></script>
+    <script src="./webbyterm-client.js"></script>
+
+</body>
+
+</html>
