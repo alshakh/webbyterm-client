@@ -12,7 +12,7 @@ app.use(bodyparser.json())
 
 const WebbyTerm = require("webbyterm")
 
-app.use(express.static(__dirname + "/static"));
+app.use(express.static(__dirname + "/example.static"));
 
 // ----------------------------------------------
 
