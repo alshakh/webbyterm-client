@@ -1,4 +1,4 @@
-(() => {
+let initializeTerminals = (() => {
     if (!Terminal) {
         console.error("xtermjs is not loaded!!")
     }
@@ -165,7 +165,6 @@
 
         });
     }
-
-    initAllTerminals()
-
+    return initAllTerminals
 })()
+
