@@ -8,7 +8,7 @@ let initializeTerminals = (() => {
 
     const DEFAULTS = {
         fontSize: 30,
-        prompt: "$ ",
+        prompt: '\\e[95m$\\e[0m ',
         cwd: "/var/tmp"
     }
 
