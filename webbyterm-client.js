@@ -7,8 +7,8 @@ let initializeTerminals = (() => {
     Terminal.applyAddon(attach);
 
     const DEFAULTS = {
-        fontSize: 20,
-        prompt: ">> ",
+        fontSize: 30,
+        prompt: "$ ",
         cwd: "/var/tmp"
     }
 
@@ -46,7 +46,7 @@ let initializeTerminals = (() => {
         //
         const term = new Terminal({
             fontSize: DEFAULTS['fontSize'],
-            //lineHeight: 0.9,
+            lineHeight: 0.9,
             fontFamily: "Inconsolata"
         });
         // start terminal backend and connect to pty
