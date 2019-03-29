@@ -8,7 +8,7 @@ let initializeTerminals = (() => {
 
     const DEFAULTS = {
         fontSize: 30,
-        fontFamily: "Inconsolata"
+        fontFamily: "Inconsolata",
         cwd: "/var/tmp"
     }
 
