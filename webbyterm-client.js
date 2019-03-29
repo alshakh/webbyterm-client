@@ -8,7 +8,7 @@ let initializeTerminals = (() => {
 
     const DEFAULTS = {
         fontSize: 30,
-        prompt: '\\e[95m$\\e[0m ',
+        fontFamily: "Inconsolata"
         cwd: "/var/tmp"
     }
 
@@ -45,9 +45,9 @@ let initializeTerminals = (() => {
     let connectTerminal = (spec) => {
         //
         const term = new Terminal({
-            fontSize: DEFAULTS['fontSize'],
+            fontSize: spec.fontSize,
             lineHeight: 0.9,
-            fontFamily: "Inconsolata"
+            fontFamily: spec.fontFamily
         });
         // start terminal backend and connect to pty
         fetch(`/terminal/${spec.id}/start`, {
@@ -116,7 +116,7 @@ let initializeTerminals = (() => {
                 console.log("invalid env data-attribute, ignoring", e);
             }
         }
-        env['PS1'] = `${name} ${DEFAULTS.prompt}`
+
 
 
         return {
@@ -128,13 +128,21 @@ let initializeTerminals = (() => {
         }
     }
 
-    let initAllTerminals = () => {
+    let initAllTerminals = (opts) => {
+        let home = opts.home || './'
+        let fontSize = opts.fontSize || DEFAULTS['fontSize']
+        let fontFamily = opts.fontSize || DEFAULTS['fontFamily']
+
         document.querySelectorAll('[data-terminal]').forEach((el) => {
 
             let id = getTerminalElementId(el)
 
             // connect a terminal
             let spec = processTerminalElementAttributes(el)
+            spec.fontSize = fontSize
+            spec.fontFamily = fontFamily
+            spec.env.HOME = home
+
             let terminal = connectTerminal(spec)
 
             // attach terminal to element
