@@ -131,7 +131,7 @@ let initializeTerminals = (() => {
     let initAllTerminals = (opts) => {
         let home = opts.home || './'
         let fontSize = opts.fontSize || DEFAULTS['fontSize']
-        let fontFamily = opts.fontSize || DEFAULTS['fontFamily']
+        let fontFamily = opts.fontFamily || DEFAULTS['fontFamily']
 
         document.querySelectorAll('[data-terminal]').forEach((el) => {
 
